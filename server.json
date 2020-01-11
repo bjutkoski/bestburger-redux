@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Hamburguer Gostoso",
+      "price": 36.9,
+      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Hamburguer Gostoso",
+      "price": 34.9,
+      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Hamburguer Gostoso",
+      "price": 32.9,
+      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Hamburguer Gostoso",
+      "price": 37.9,
+      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Hamburguer Gostoso",
+      "price": 36.9,
+      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+    }
+  ]
+}
