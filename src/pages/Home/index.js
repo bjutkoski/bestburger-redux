@@ -1,53 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { MdAddShoppingCart } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
-import { addToShoppingCart } from '../../store/modules/shoppingCart/actions';
+import AddShoppingCartButton from '../../components/AddShoppingCartButton';
 
-import { ProductList } from './styles';
+import { BurgerList, SearchBurgers } from './styles';
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [burgers, setBurgers] = useState([]);
+  const [filteredBurgers, setFilteredBurgers] = useState([]);
 
   useEffect(() => {
-    async function getProducts() {
-      const response = await api.get('products');
+    async function getBurgers() {
+      const response = await api.get('burgers');
 
-      const data = response.data.map(product => ({
-        ...product,
-        priceFormatted: formatPrice(product.price),
+      const data = response.data.map(burger => ({
+        ...burger,
+        priceFormatted: formatPrice(burger.price),
       }));
 
-      setProducts(data);
+      setBurgers(data);
     }
-    getProducts();
+    getBurgers();
   }, []);
 
-  const dispatch = useDispatch();
-
-  function handleAddItem(product) {
-    dispatch(addToShoppingCart(product));
-  }
+  const [query, setQuery] = useState('');
+  useEffect(() => {
+    function filterBurgers(burger) {
+      const re = new RegExp(query, 'gi');
+      return String(burger.id).match(re) || burger.title.match(re);
+    }
+    setFilteredBurgers(burgers.filter(filterBurgers));
+  }, [burgers, query]);
 
   return (
-    <ProductList>
-      {products.map(product => (
-        <li key={product.id}>
-          <img src={product.image} alt={product.title} />
-          <strong>{product.title}</strong>
-          <span>{product.priceFormatted}</span>
-
-          <button type="button" onClick={() => handleAddItem(product)}>
-            <div>
-              <MdAddShoppingCart size={16} color="#fff" /> 2
-            </div>
-
-            <span>ADICIONAR AO CARRINHO</span>
-          </button>
-        </li>
-      ))}
-    </ProductList>
+    <>
+      <SearchBurgers>
+        <div>
+          <input
+            type="text"
+            onChange={e => setQuery(e.target.value)}
+            placeholder="Buscar por descrição ou ID"
+          />
+        </div>
+      </SearchBurgers>
+      <BurgerList>
+        {filteredBurgers.map(burger => (
+          <li key={burger.id}>
+            <Link to={`/burger/${burger.id}`}>
+              <img src={burger.image} alt={burger.title} />
+              <strong>{burger.title}</strong>
+              <p>{`(ID: ${burger.id})`}</p>
+              <span>{burger.priceFormatted}</span>
+            </Link>
+            <AddShoppingCartButton burger={burger} />
+          </li>
+        ))}
+      </BurgerList>
+    </>
   );
 }

@@ -1,100 +1,120 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
   MdDelete,
 } from 'react-icons/md';
+import { formatPrice } from '../../util/format';
 
 import {
   removeFromShoppingCart,
   updateAmount,
 } from '../../store/modules/shoppingCart/actions';
 
-import { Container, ProductTable, Total } from './styles';
+import { Container, BurgerTable, Total } from './styles';
 
 export default function ShoppingCart() {
   const dispatch = useDispatch();
-  const shoppingCart = useSelector(state => state.shoppingCart);
+  const shoppingCart = useSelector(state =>
+    state.shoppingCart.map(burger => ({
+      ...burger,
+      subtotal: formatPrice(burger.price * burger.amount),
+    }))
+  );
 
-  function handleRemoveFromShoppingCart(productId) {
-    dispatch(removeFromShoppingCart(productId));
+  const total = useSelector(state =>
+    formatPrice(
+      state.shoppingCart.reduce(
+        (sumSubtotal, burger) => sumSubtotal + burger.price * burger.amount,
+        0
+      )
+    )
+  );
+
+  function handleRemoveFromShoppingCart(burgerId) {
+    dispatch(removeFromShoppingCart(burgerId));
   }
 
-  function handleUpdateAmount(productId, amount) {
-    dispatch(updateAmount(productId, amount));
+  function increment(burger) {
+    dispatch(updateAmount(burger.id, burger.amount + 1));
+  }
+
+  function decrement(burger) {
+    dispatch(updateAmount(burger.id, burger.amount - 1));
   }
 
   return (
     <Container>
-      <ProductTable>
-        <thead>
-          <tr>
-            <th alt="Imagem do Produto" />
-            <th>PRODUTO</th>
-            <th>QTD</th>
-            <th>SUBTOTAL</th>
-            <th alt="Excluir produto do carrinho" />
-          </tr>
-        </thead>
-        <tbody>
-          {shoppingCart.map(product => (
-            <tr>
-              <td>
-                <img src={product.image} alt={product.title} />
-              </td>
-              <td>
-                <strong>{product.title}</strong>
-                <span>{product.formattedPrice}</span>
-              </td>
-              <td>
-                <div>
-                  <button type="button">
-                    <MdRemoveCircleOutline
-                      size={20}
-                      color="#7159c1"
-                      onClick={() =>
-                        handleUpdateAmount(product.id, product.amount - 1)
-                      }
-                    />
-                  </button>
-                  <input type="number" readOnly value={product.amount} />
-                  <button type="button">
-                    <MdAddCircleOutline
-                      size={20}
-                      color="#7159c1"
-                      onClick={() =>
-                        handleUpdateAmount(product.id, product.amount + 1)
-                      }
-                    />
-                  </button>
-                </div>
-              </td>
-              <td>
-                <strong>R$73,80</strong>
-              </td>
-              <td>
-                <button
-                  type="button"
-                  onClick={() => handleRemoveFromShoppingCart(product.id)}
-                >
-                  <MdDelete size={20} color="#7159c1" />
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </ProductTable>
+      {shoppingCart.length > 0 ? (
+        <>
+          <BurgerTable cellSpacing="0">
+            <thead>
+              <tr>
+                <th alt="Imagem do Produto" />
+                <th>PRODUTO</th>
+                <th>QTD</th>
+                <th>SUBTOTAL</th>
+                <th alt="Excluir produto do carrinho" />
+              </tr>
+            </thead>
+            <tbody>
+              {shoppingCart.map(burger => (
+                <tr>
+                  <td>
+                    <img src={burger.image} alt={burger.title} />
+                  </td>
+                  <td>
+                    <strong>{burger.title}</strong>
+                    <span>{burger.formattedPrice}</span>
+                  </td>
+                  <td>
+                    <div>
+                      <button type="button">
+                        <MdRemoveCircleOutline
+                          size={20}
+                          color="#ee7500"
+                          onClick={() => decrement(burger)}
+                        />
+                      </button>
+                      <input type="number" readOnly value={burger.amount} />
+                      <button type="button">
+                        <MdAddCircleOutline
+                          size={20}
+                          color="#ee7500"
+                          onClick={() => increment(burger)}
+                        />
+                      </button>
+                    </div>
+                  </td>
+                  <td>
+                    <strong>{burger.subtotal}</strong>
+                  </td>
+                  <td>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveFromShoppingCart(burger.id)}
+                    >
+                      <MdDelete size={20} color="#ee7500" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </BurgerTable>
 
-      <footer>
-        <button type="button">Finalizar pedido</button>
+          <footer>
+            <button type="button">Finalizar pedido</button>
 
-        <Total>
-          <span>TOTAL</span>
-          <strong>R$1920,28</strong>
-        </Total>
-      </footer>
+            <Total>
+              <span>TOTAL</span>
+              <strong>{total}</strong>
+            </Total>
+          </footer>
+        </>
+      ) : (
+        <span>Carrinho vazio :(</span>
+      )}
     </Container>
   );
 }

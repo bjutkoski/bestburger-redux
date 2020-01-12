@@ -5,7 +5,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 50px 0;
+  margin: 42px 0;
 `;
 
 export const ShoppingCart = styled(Link)`
@@ -28,7 +28,7 @@ export const ShoppingCart = styled(Link)`
 
     span {
       font-size: 12px;
-      color: #999;
+      color: #d69764;
     }
   }
 `;

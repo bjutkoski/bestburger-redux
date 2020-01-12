@@ -1,34 +1,189 @@
 {
-  "products": [
+  "burgers": [
     {
       "id": 1,
-      "title": "Hamburguer Gostoso",
+      "title": "BB Triplo",
       "price": 36.9,
-      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/300x270px-MS_Cheddar_3.png",
+      "description": "Um verdadeiro exagero de cheddar. Só quem é louco por queijo tem coragem de encarar esse gigante.",
+      "nutritionFacts": [
+        {
+          "name": "Calorias",
+          "value": "1510"
+        },
+        {
+          "name": "Proteínas",
+          "value": "96g"
+        },
+        {
+          "name": "Carboidratos",
+          "value": "46g"
+        },
+        {
+          "name": "Gordura",
+          "value": "104g"
+        },
+        {
+          "name": "Gorduras Saturadas",
+          "value": "49g"
+        },
+        {
+          "name": "Gordura Trans",
+          "value": "0g"
+        },
+        {
+          "name": "Sódio",
+          "value": "2050mg"
+        }
+      ]
     },
     {
       "id": 2,
-      "title": "Hamburguer Gostoso",
+      "title": "BB Salad",
       "price": 34.9,
-      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/Whoppercomqueijo_thumb.png",
+      "description": "Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.",
+      "nutritionFacts": [
+        {
+          "name": "Calorias",
+          "value": "680"
+        },
+        {
+          "name": "Proteínas",
+          "value": "37g"
+        },
+        {
+          "name": "Carboidratos",
+          "value": "54g"
+        },
+        {
+          "name": "Gordura",
+          "value": "35g"
+        },
+        {
+          "name": "Gorduras Saturadas",
+          "value": "19g"
+        },
+        {
+          "name": "Gordura Trans",
+          "value": "0g"
+        },
+        {
+          "name": "Sódio",
+          "value": "0mg"
+        }
+      ]
     },
     {
       "id": 3,
-      "title": "Hamburguer Gostoso",
+      "title": "BB King",
       "price": 32.9,
-      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/BigKing_thumb_0.png",
+      "description": "Dois deliciosos hambúrgueres grelhados no fogo como churrasco, queijo derretido e molho BB KingTM.",
+      "nutritionFacts": [
+        {
+          "name": "Calorias",
+          "value": "810"
+        },
+        {
+          "name": "Proteínas",
+          "value": "35g"
+        },
+        {
+          "name": "Carboidratos",
+          "value": "149g"
+        },
+        {
+          "name": "Gordura",
+          "value": "50g"
+        },
+        {
+          "name": "Gorduras Saturadas",
+          "value": "22g"
+        },
+        {
+          "name": "Gordura Trans",
+          "value": "1g"
+        },
+        {
+          "name": "Sódio",
+          "value": "1170mg"
+        }
+      ]
     },
     {
       "id": 4,
-      "title": "Hamburguer Gostoso",
+      "title": "Best Blend Cheese",
       "price": 37.9,
-      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/300x270px-PRIME_BLEND_CHEESE.png",
+      "description": "A linha BB Experts traz o nosso novo Best Blend Cheese. Queijo dentro da carne, pão de brioche, maionese, tomate, cebola roxa, queijo cheddar e molho barbecue. Esse, sim, é um sanduíche profissa.",
+      "nutritionFacts": [
+        {
+          "name": "Calorias",
+          "value": "890"
+        },
+        {
+          "name": "Proteínas",
+          "value": "63g"
+        },
+        {
+          "name": "Carboidratos",
+          "value": "63g"
+        },
+        {
+          "name": "Gordura",
+          "value": "49g"
+        },
+        {
+          "name": "Gorduras Saturadas",
+          "value": "26g"
+        },
+        {
+          "name": "Gordura Trans",
+          "value": "2g"
+        },
+        {
+          "name": "Sódio",
+          "value": "1740mg"
+        }
+      ]
     },
     {
       "id": 5,
-      "title": "Hamburguer Gostoso",
+      "title": "BB Onion BBQ",
       "price": 36.9,
-      "image": "https://blog-cdn.eduk.com.br/wp-content/uploads/sites/3/2016/08/18130620/hamburguer_shutterstock.jpg"
+      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/RODEIO_01_thumb.png",
+      "description": "Hambúrguer grelhado no fogo como churrasco, queijo derretido, onion rings e molho barbecue. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.",
+      "nutritionFacts": [
+        {
+          "name": "Calorias",
+          "value": "400"
+        },
+        {
+          "name": "Proteínas",
+          "value": "18g"
+        },
+        {
+          "name": "Carboidratos",
+          "value": "40g"
+        },
+        {
+          "name": "Gordura",
+          "value": "19g"
+        },
+        {
+          "name": "Gorduras Saturadas",
+          "value": "8g"
+        },
+        {
+          "name": "Gordura Trans",
+          "value": "0g"
+        },
+        {
+          "name": "Sódio",
+          "value": "790mg"
+        }
+      ]
     }
   ]
 }

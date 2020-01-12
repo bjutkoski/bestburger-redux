@@ -7,30 +7,33 @@ export default function shoppingCart(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.ADD_TO_SHOPPING_CART:
       return produce(state, draft => {
-        const { product } = action.payload;
-        const productIndex = draft.findIndex(p => p.id === product.id);
-        if (productIndex >= 0) {
-          draft[productIndex].amount += 1;
+        const { burger } = action.payload;
+        const burgerIndex = draft.findIndex(p => p.id === burger.id);
+        if (burgerIndex >= 0) {
+          draft[burgerIndex].amount += 1;
         } else {
-          draft.push({ ...product, amount: 1 });
+          draft.push({ ...burger, amount: 1 });
         }
       });
-    case Types.UPDATE_AMOUNT:
+    case Types.UPDATE_AMOUNT: {
+      const { burgerId, amount } = action.payload;
+      if (amount <= 0) {
+        return state;
+      }
       return produce(state, draft => {
-        const { productId, amount } = action.payload;
-
-        const productIndex = draft.findIndex(p => p.id === productId);
-        if (productIndex >= 0) {
-          draft[productIndex].amount = amount;
+        const burgerIndex = draft.findIndex(p => p.id === burgerId);
+        if (burgerIndex >= 0) {
+          draft[burgerIndex].amount = amount;
         }
       });
+    }
     case Types.REMOVE_FROM_SHOPPING_CART:
       return produce(state, draft => {
-        const { productId } = action.payload;
+        const { burgerId } = action.payload;
 
-        const productIndex = draft.findIndex(p => p.id === productId);
-        if (productIndex >= 0) {
-          draft.splice(productIndex, 1);
+        const burgerIndex = draft.findIndex(p => p.id === burgerId);
+        if (burgerIndex >= 0) {
+          draft.splice(burgerIndex, 1);
         }
       });
     default:

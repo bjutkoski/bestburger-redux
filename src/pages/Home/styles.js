@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
 
-export const ProductList = styled.ul`
+export const BurgerList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
@@ -14,56 +13,62 @@ export const ProductList = styled.ul`
     border-radius: 4px;
     padding: 20px;
 
-    img {
-      align-self: center;
-      max-width: 250px;
+    strong,
+    p,
+    span {
+      text-align: center;
     }
 
-    > strong {
-      font-size: 16px;
-      line-height: 20px;
-      color: #333;
-      margin-top: 5px;
-    }
-
-    > span {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 5px 0 20px;
-    }
-
-    button {
-      background: #7159c1;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      overflow: hidden;
-      margin-top: auto;
-
+    a {
       display: flex;
-      align-items: center;
-      transition: background 0.2s;
+      flex-direction: column;
 
-      &:hover {
-        background: ${darken(0.03, '#7159c1')};
+      img {
+        align-self: center;
+        max-width: 250px;
       }
 
-      div {
-        display: flex;
-        align-items: center;
-        padding: 12px;
-        background: rgba(0, 0, 0, 0.1);
-
-        svg {
-          margin-right: 5px;
-        }
+      > strong {
+        font-size: 16px;
+        line-height: 20px;
+        color: #333;
       }
 
-      span {
-        flex: 1;
-        text-align: center;
+      > p {
+        font-size: 12px;
+        line-height: 20px;
+        color: #636363;
+      }
+
+      > span {
+        font-size: 21px;
         font-weight: bold;
+        margin: 5px 0 20px;
+        color: black;
       }
+    }
+  }
+`;
+
+export const SearchBurgers = styled.div`
+  margin: 14px 0;
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px;
+    border-radius: 4px;
+
+    background: linear-gradient(#d69764, #ee7500);
+    height: 42px;
+
+    input {
+      border: none;
+      border-radius: 4px;
+      width: 280px;
+      height: 24px;
+      padding: 5px;
     }
   }
 `;

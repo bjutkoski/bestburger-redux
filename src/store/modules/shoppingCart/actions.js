@@ -1,21 +1,21 @@
 import Types from './types';
 
-export function addToShoppingCart(product) {
+export function addToShoppingCart(burger) {
   return {
     type: Types.ADD_TO_SHOPPING_CART,
-    payload: { product },
+    payload: { burger },
   };
 }
 
-export function updateAmount(productId, amount) {
+export function updateAmount(burgerId, amount) {
   return {
     type: Types.UPDATE_AMOUNT,
-    payload: { productId, amount },
+    payload: { burgerId, amount },
   };
 }
-export function removeFromShoppingCart(productId) {
+export function removeFromShoppingCart(burgerId) {
   return {
     type: Types.REMOVE_FROM_SHOPPING_CART,
-    payload: { productId },
+    payload: { burgerId },
   };
 }

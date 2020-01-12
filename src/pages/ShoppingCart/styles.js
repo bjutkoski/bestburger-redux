@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
 
     button {
-      background: #7159c1;
+      background: #ee7500;
       color: #fff;
       border: 0;
       border-radius: 4px;
@@ -23,24 +23,45 @@ export const Container = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#7159c1')};
+        background: ${darken(0.06, '#ee7500')};
       }
     }
   }
+
+  > span {
+    color: #ee7500;
+    font-size: 24px;
+    font-weight: bold;
+  }
 `;
 
-export const ProductTable = styled.table`
+export const BurgerTable = styled.table`
   width: 100%;
 
   thead th {
-    color: #999;
+    color: #d69764;
     text-align: left;
     padding: 12px;
   }
 
   tbody td {
     padding: 12px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #636363;
+
+    button {
+      border-radius: 50%;
+      transition: background 0.2s;
+      &:hover {
+        background: #eee;
+      }
+    }
+
+    button svg {
+      transition: fill 0.2s;
+      &:hover {
+        fill: ${darken(0.06, '#ee7500')};
+      }
+    }
   }
 
   img {
@@ -84,7 +105,7 @@ export const Total = styled.div`
   align-items: baseline;
 
   span {
-    color: #999;
+    color: #636363;
     font-weight: bold;
   }
 

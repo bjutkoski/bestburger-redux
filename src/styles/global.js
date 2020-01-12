@@ -20,8 +20,12 @@ export default createGlobalStyle`
   padding: 0 20px 50px;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background: #191920;
+  background: linear-gradient(45deg, #000000, #393d40) ;
   -webkit-font-smoothing: antialiased;
 }
 

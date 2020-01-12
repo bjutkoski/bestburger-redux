@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { MdShoppingCart } from 'react-icons/md';
 
-import { Container, ShoppingCart } from './styles';
+import { ReactComponent as BestburgerLogo } from '../../assets/images/bestburger.svg';
 
-import logo from '../../assets/images/logo.svg';
+import { Container, ShoppingCart } from './styles';
 
 export default function Header() {
   const cartSize = useSelector(state => state.shoppingCart.length);
@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <Container>
       <Link to="/">
-        <img src={logo} alt="Burger Shop" />
+        <BestburgerLogo />
       </Link>
 
       <ShoppingCart to="/shoppingcart">
