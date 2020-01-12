@@ -4,7 +4,7 @@
       "id": 1,
       "title": "BB Triplo",
       "price": 36.9,
-      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/300x270px-MS_Cheddar_3.png",
+      "image": "/api_images/bb_triplo.png",
       "description": "Um verdadeiro exagero de cheddar. Só quem é louco por queijo tem coragem de encarar esse gigante.",
       "nutritionFacts": [
         {
@@ -41,7 +41,7 @@
       "id": 2,
       "title": "BB Salad",
       "price": 34.9,
-      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/Whoppercomqueijo_thumb.png",
+      "image": "/api_images/bb_salad.png",
       "description": "Pão com gergelim, um suculento hambúrguer de pura carne bovina, duas fatias de queijo derretido, quatro fatias de picles, alface, tomate, cebola, maionese e ketchup. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.",
       "nutritionFacts": [
         {
@@ -78,7 +78,7 @@
       "id": 3,
       "title": "BB King",
       "price": 32.9,
-      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/BigKing_thumb_0.png",
+      "image": "/api_images/bb_king.png",
       "description": "Dois deliciosos hambúrgueres grelhados no fogo como churrasco, queijo derretido e molho BB KingTM.",
       "nutritionFacts": [
         {
@@ -115,7 +115,7 @@
       "id": 4,
       "title": "Best Blend Cheese",
       "price": 37.9,
-      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/300x270px-PRIME_BLEND_CHEESE.png",
+      "image": "/api_images/best_blend_cheese.png",
       "description": "A linha BB Experts traz o nosso novo Best Blend Cheese. Queijo dentro da carne, pão de brioche, maionese, tomate, cebola roxa, queijo cheddar e molho barbecue. Esse, sim, é um sanduíche profissa.",
       "nutritionFacts": [
         {
@@ -152,7 +152,7 @@
       "id": 5,
       "title": "BB Onion BBQ",
       "price": 36.9,
-      "image": "http://bk-latam-prod.s3.amazonaws.com/sites/burgerking.com.br/files/RODEIO_01_thumb.png",
+      "image": "/api_images/bb_onion_bbq.png",
       "description": "Hambúrguer grelhado no fogo como churrasco, queijo derretido, onion rings e molho barbecue. Todos esses ingredientes são cuidadosamente armazenados e preparados, para você se deliciar com um sanduíche fresquinho e de alta qualidade.",
       "nutritionFacts": [
         {
